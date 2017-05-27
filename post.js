@@ -1,7 +1,22 @@
 	return {
-		from_base64: from_base64,
-		from_hex: from_hex,
-		from_string: from_string,
+		from_base64: function (data) {
+			return typeof data === 'string' ?
+				from_base64(data) :
+				data
+			;
+		},
+		from_hex: function (data) {
+			return typeof data === 'string' ?
+				from_hex(data) :
+				data
+			;
+		},
+		from_string: function (message) {
+			return typeof message === 'string' ?
+				from_string(message) :
+				message
+			;
+		},
 		memcmp: memcmp,
 		memzero: function (data) {
 			if (data instanceof Uint8Array) {
@@ -11,9 +26,24 @@
 				data.fill(0);
 			}
 		},
-		to_base64: to_base64,
-		to_hex: to_hex,
-		to_string: to_string
+		to_base64: function (data) {
+			return typeof data === 'string' ?
+				data :
+				to_base64(data).replace(/\s+/g, '')
+			;
+		},
+		to_hex: function (data) {
+			return typeof data === 'string' ?
+				data :
+				to_hex(data).replace(/\s+/g, '')
+			;
+		},
+		to_string: function (message) {
+			return typeof message === 'string' ?
+				message :
+				to_string(message)
+			;
+		}
 	};
 }());
 
