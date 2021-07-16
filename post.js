@@ -5,6 +5,12 @@
 				data
 			;
 		},
+		from_base64url: function (data) {
+			return typeof data === 'string' ?
+				this.from_base64(data.replace(/-/g, '+').replace(/_/g, '/')) :
+				data
+			;
+		},
 		from_hex: function (data) {
 			return typeof data === 'string' ?
 				from_hex(data) :
@@ -31,6 +37,9 @@
 				data :
 				to_base64(data).replace(/\s+/g, '')
 			;
+		},
+		to_base64url: function (data) {
+			return this.to_base64(data).replace(/\+/g, '-').replace(/\//g, '_');
 		},
 		to_hex: function (data) {
 			return typeof data === 'string' ?

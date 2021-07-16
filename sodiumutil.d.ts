@@ -3,6 +3,9 @@ declare module 'sodiumutil' {
 		/** Converts base64 string into binary byte array. */
 		from_base64 (s: string) : Uint8Array;
 
+		/** Converts base64url string into binary byte array. */
+		from_base64url (s: string) : Uint8Array;
+
 		/** Converts hex string into binary byte array. */
 		from_hex (s: string) : Uint8Array;
 
@@ -17,6 +20,9 @@ declare module 'sodiumutil' {
 
 		/** Converts binary into base64 string. */
 		to_base64 (a: Uint8Array) : string;
+
+		/** Converts binary into base64url string. */
+		to_base64url (a: Uint8Array) : string;
 
 		/** Converts binary into hex string. */
 		to_hex (a: Uint8Array) : string;
