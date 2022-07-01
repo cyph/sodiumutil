@@ -1,5 +1,1 @@
-# sodiumutil
-
-## Overview
-
-Pulls out some useful functions from libsodium.js.
+Moved to https://github.com/cyph/pqcrypto.js/tree/master/packages/sodiumutil
